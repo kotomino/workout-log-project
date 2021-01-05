@@ -7,7 +7,6 @@
 - name
 - personal_record
 - date
-- user_id
 
 ## Controllers
 
