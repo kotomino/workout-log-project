@@ -1,0 +1,32 @@
+<br>
+<h4 class="teal-text accent-4">Your PR Journal</h4>
+<br>
+
+<p>Recently Viewed: <%= @workout? @workout.name : "Haven't viewed any workouts." %></p>
+
+<table class="highlight">
+  <thead>
+    <tr>
+        <th>Exercise</th>
+        <th>Personal Record</th>
+        <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @workouts.each do |workout| %>
+      <tr>
+        <td><%= workout.name%></td>
+        <td><%= workout.personal_record%> lbs</td>
+        <td><a href="/workouts/<%= workout.id %>" class="btn-small">View</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<a href="/workouts/new" class="btn-small">Add New PR</a>
+<br>
+<br>
+<img src="images/deadlift.jpg" class="circle">
+
+
