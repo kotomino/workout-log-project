@@ -11,16 +11,29 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   </head>
   <body>
-
-        <%= yield %>
-
-      <footer class="branding">
-        <small>&copy; 2021 <strong>WorkoutLogProject</strong></small>
-      </footer>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <nav class="teal accent-4">
+      <div class="nav-wrapper container">
+        <a href="/" class="brand-logo">Workout PR Journal</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Signup</a></li>
+          <li><a href="/workouts">My Journal</a></li>
+        </ul>
+      </div>
+    </nav>
+        
+    <div class="container">
+      <%= yield %>
+    </div>
+            
     <!--[if lt IE 7]>
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
