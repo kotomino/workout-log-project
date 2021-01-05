@@ -1,0 +1,34 @@
+<h4 class="teal-text text-accent-4"><%= @workout.name %></h4>
+
+<table>
+  <thead>
+    <tr>
+        <th>Exercise</th>
+        <th>Personal Record</th>
+        <th>Date</th>
+        <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @workout.name %></td>
+      <td><%= @workout.personal_record %></td>
+      <td><%= @workout.date %></td>
+      <td>
+        <form action="/workouts/<%= @workout.id %>" method="post">
+          <a href="/workouts/<%= @workout.id %>/edit" class="btn-small" style="margin-right: 20px">Edit</a>
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete PR" class="btn-small red white-text">
+        </form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<img src="images/deadlift.jpg" class="circle">
+
+
+
