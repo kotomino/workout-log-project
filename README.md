@@ -8,6 +8,17 @@
 - personal_record
 - date
 
+belong to a user
+
+### User
+- username / email
+- password_digest (encrypted- bcrypt)
+
+has many workouts
+
+### Sessions (cookies)
+
+
 ## Controllers
 
 ### 7 Different Restful routes for Workouts
