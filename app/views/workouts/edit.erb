@@ -1,0 +1,41 @@
+<br>
+<h4 class="teal-text text-accent-4">Edit <%= @workout.name %> PR</h4>
+<br>
+
+<form action="/workouts/<%= @workout.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="input-field">
+    <select id="name" name="workout[name]" class="validate">
+      <option value="" disabled selected><%= @workout.name %></option>
+      <option value="Deadlift">Deadlift</option>
+      <option value="Overhead Press">Overhead Press</option>
+      <option value="Bench Press">Bench Press</option>
+      <option value="Squat">Squat</option>
+      <option value="Clean and Press">Clean and Press</option>
+      <option value="Hang Clean">Hang Clean</option>
+      <option value="Snatch Lift">Snatch Lift</option>
+    </select>
+    <label>Workout Exercise</label>
+  </div>
+  <div class="input-field">
+    <input id="personal_record" name="workout[personal_record]" type="text" class="validate" value="<%= @workout.personal_record %>">
+    <label for="personal_record">Personal Record</label>
+  </div>
+  <div class="input-field">
+    <input id="date" name="workout[date]" type="text" class="datepicker" value="<%= @workout.date %>">
+    <label for="date">Date</label>
+  </div>
+
+  <input type="submit" value="Log PR" class="btn teal accent-4">
+
+</form>
+
+<script>
+    $(document).ready(function(){
+      $('.datepicker').datepicker();
+    });
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>
+
