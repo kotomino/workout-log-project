@@ -1,0 +1,28 @@
+<br>
+<h4 class="teal-text accent-4">Record New Workout</h4>
+<br>
+
+<form action="/workouts" method="post">
+  <div class="input-field">
+    <input placeholder="Ex: Deadlift" id="name" name="workout[name]" type="text" class="validate">
+    <label for="name">Workout Exercise</label>
+  </div>
+  <div class="input-field">
+    <input placeholder="Ex: 180" id="personal_record" name="workout[personal_record]" type="text" class="validate">
+    <label for="personal_record">Personal Record</label>
+  </div>
+  <div class="input-field">
+    <input placeholder="mm/dd/yyyy" id="date" name="workout[date]" type="text" class="datepicker">
+    <label for="date">Date</label>
+  </div>
+
+  <input type="submit" value="Log PR" class="btn teal accent-4">
+
+</form>
+
+<script>
+    $(document).ready(function(){
+      $('.datepicker').datepicker();
+    });
+  </script>
+
