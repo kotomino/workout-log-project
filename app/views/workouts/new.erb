@@ -4,8 +4,17 @@
 
 <form action="/workouts" method="post">
   <div class="input-field">
-    <input placeholder="Ex: Deadlift" id="name" name="workout[name]" type="text" class="validate">
-    <label for="name">Workout Exercise</label>
+    <select id="name" name="workout[name]" class="validate">
+      <option value="" disabled selected>Select option</option>
+      <option value="Deadlift">Deadlift</option>
+      <option value="Overhead Press">Overhead Press</option>
+      <option value="Bench Press">Bench Press</option>
+      <option value="Squat">Squat</option>
+      <option value="Clean and Press">Clean and Press</option>
+      <option value="Hang Clean">Hang Clean</option>
+      <option value="Snatch Lift">Snatch Lift</option>
+    </select>
+    <label>Workout Exercise</label>
   </div>
   <div class="input-field">
     <input placeholder="Ex: 180" id="personal_record" name="workout[personal_record]" type="text" class="validate">
@@ -19,10 +28,16 @@
   <input type="submit" value="Log PR" class="btn teal accent-4">
 
 </form>
+<br>
+
 
 <script>
     $(document).ready(function(){
       $('.datepicker').datepicker();
     });
-  </script>
+
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>
 
