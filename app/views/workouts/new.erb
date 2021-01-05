@@ -3,26 +3,28 @@
 <br>
 
 <form action="/workouts" method="post">
-  <div class="input-field">
-    <select id="name" name="workout[name]" class="validate">
-      <option value="" disabled selected>Select option</option>
-      <option value="Deadlift">Deadlift</option>
-      <option value="Overhead Press">Overhead Press</option>
-      <option value="Bench Press">Bench Press</option>
-      <option value="Squat">Squat</option>
-      <option value="Clean and Press">Clean and Press</option>
-      <option value="Hang Clean">Hang Clean</option>
-      <option value="Snatch Lift">Snatch Lift</option>
-    </select>
-    <label>Workout Exercise</label>
-  </div>
-  <div class="input-field">
-    <input placeholder="Ex: 180" id="personal_record" name="workout[personal_record]" type="text" class="validate">
-    <label for="personal_record">Personal Record</label>
-  </div>
-  <div class="input-field">
-    <input placeholder="mm/dd/yyyy" id="date" name="workout[date]" type="text" class="datepicker">
-    <label for="date">Date</label>
+  <div class="row">
+    <div class="input-field col s10">
+      <select id="name" name="workout[name]" class="validate">
+        <option value="" disabled selected>Select option</option>
+        <option value="Deadlift">Deadlift</option>
+        <option value="Overhead Press">Overhead Press</option>
+        <option value="Bench Press">Bench Press</option>
+        <option value="Squat">Squat</option>
+        <option value="Clean and Press">Clean and Press</option>
+        <option value="Hang Clean">Hang Clean</option>
+        <option value="Snatch Lift">Snatch Lift</option>
+      </select>
+      <label>Workout Exercise</label>
+    </div>
+    <div class="col s5 input-field">
+      <input placeholder="Ex: 180" id="personal_record" name="workout[personal_record]" type="text" class="validate">
+      <label for="personal_record">Personal Record (lbs)</label>
+    </div>
+    <div class="col s5 input-field">
+      <input placeholder="mm/dd/yyyy" id="date" name="workout[date]" type="text" class="datepicker">
+      <label for="date">Date</label>
+    </div>
   </div>
 
   <input type="submit" value="Log PR" class="btn teal accent-4">
