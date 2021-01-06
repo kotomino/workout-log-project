@@ -1,30 +1,37 @@
 class WorkoutsController < ApplicationController
     get '/workouts' do
-        @workouts = Workout.all
+        redirect_if_not_logged_in
+        @workouts = current_user.workouts
         @workout = Workout.find_by_id(session[:workout_id])
+        @user = User.find_by_id(session[:user_id])
+        
         erb :'/workouts/index'
     end
 
     get '/workouts/new' do
+        redirect_if_not_logged_in
         erb :'/workouts/new'
     end
 
     get '/workouts/:id' do
+        redirect_if_not_logged_in
         find_workout
         session[:workout_id] = @workout.id if @workout
         redirect_if_workout_not_found
+        redirect_if_not_owner
         erb :'/workouts/show'
     end
 
     get '/workouts/:id/edit' do
+        redirect_if_not_logged_in
         find_workout
         redirect_if_workout_not_found
+        redirect_if_not_owner
         erb :'/workouts/edit'
     end
 
     post '/workouts' do
-        workout = Workout.new(params[:workout])
-
+        workout = current_user.workouts.build(params[:workout])
         if workout.save
             redirect '/workouts'
         else
@@ -43,7 +50,9 @@ class WorkoutsController < ApplicationController
 
     delete '/workouts/:id' do
         find_workout
-        @workout.destroy if @workout
+        redirect_if_workout_not_found
+        redirect_if_not_owner
+        @workout.destroy
         redirect "/workouts"
     end
 
@@ -55,6 +64,10 @@ class WorkoutsController < ApplicationController
 
     def redirect_if_workout_not_found
         redirect "/workouts" unless @workout
+    end
+
+    def redirect_if_not_owner
+        redirect "/workouts" unless @workout.user == current_user
     end
     
 end
