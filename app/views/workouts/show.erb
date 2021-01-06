@@ -1,3 +1,4 @@
+<br>
 <h4 class="teal-text text-accent-4"><%= @workout.name %></h4>
 
 <table>
@@ -17,9 +18,9 @@
       <td><%= @workout.date %></td>
       <td>
         <form action="/workouts/<%= @workout.id %>" method="post">
-          <a href="/workouts/<%= @workout.id %>/edit" class="btn-small" style="margin-right: 20px">Edit</a>
+          <a href="/workouts/<%= @workout.id %>/edit" class="btn-small" style="margin-right: 20px">Update</a>
           <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete PR" class="btn-small red white-text">
+          <input type="submit" value="Delete" class="btn-small red white-text">
         </form>
       </td>
     </tr>
