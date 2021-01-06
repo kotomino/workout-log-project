@@ -6,6 +6,8 @@
   <head>
     <link rel="shortcut icon" href="../favicon.ico"/>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
@@ -24,19 +26,27 @@
   <body>
     <nav class="teal accent-4">
       <div class="nav-wrapper container">
-        <a href="/" class="brand-logo">Workout PR Journal</a>
+        <a href="/" class="brand-logo"><i class="material-icons right">fitness_center</i>PR Journal</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if !logged_in? %>
-            <li><a href="/login">Login</a></li>
-            <li><a href="/signup">Create Account</a></li>
+            <li><a href="/login"><i class="material-icons left">account_circle</i>Login</a></li>
+            <li><a href="/signup"><i class="material-icons left">person_add</i>Create Account</a></li>
           <% else %>
-            <li><a href="/workouts">My Journal</a></li>
-            <li><a href="/workouts/new">Log New PR</a></li>
-            <li><a href="/logout">Logout</a></li>
+            <li><a href="/workouts"><i class="material-icons left">view_list</i>My Journal</a></li>
+            <li><a href="/workouts/new"><i class="material-icons left">library_add</i>New PR</a></li>
+            <li><a href="/logout"><i class="material-icons left">exit_to_app</i>Logout</a></li>
           <% end %>
         </ul>
       </div>
     </nav>
+    <br>
+    <div class="container errors">
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <p class="red-text" style="border:red;"><%= error %></p>
+        <% end %>
+      <% end %>
+    </div>
         
     <div class="container">
       <%= yield %>
@@ -52,15 +62,19 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <h5 class="white-text">PR Journal</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#">About Us</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Contacts</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Terms & Conditions</a></li>
+            </ul>
           </div>
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Resources</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="https://www.finder.com/gyms">Compare Top Gyms</a></li>
-              <li><a class="grey-text text-lighten-3" href="https://rippedbody.com/the-big-3-routine/">The Big 3 Workout</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://www.finder.com/gyms"><i class="material-icons left">compare</i>Compare Top Gyms</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://rippedbody.com/the-big-3-routine/"><i class="material-icons left">stars</i>The Big 3 Workout</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons left">exit_to_app</i>Link 3</a></li>
             </ul>
           </div>
         </div>
