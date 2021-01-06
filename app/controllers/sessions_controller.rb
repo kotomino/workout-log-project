@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect "/workouts"
     else
+      flash[:errors] = ["One or more required fields were left empty."]
       redirect "/signup"
     end
   end
@@ -32,7 +33,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       redirect "/workouts"
-    else 
+    else
+      flash[:errors] = ["Please enter valid username and password."]
       redirect "/login"
     end 
   end
