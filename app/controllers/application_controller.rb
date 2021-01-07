@@ -11,10 +11,20 @@ class ApplicationController < Sinatra::Base
     register Sinatra::Flash
   end
 
-  
-
   get "/" do
     erb :welcome
+  end
+
+  get '/about-us' do
+    erb :'/static-pages/about-us'
+  end
+
+  get '/contacts' do
+    erb :'/static-pages/contacts'
+  end
+
+  get '/terms' do
+    erb :'/static-pages/terms'
   end
 
   helpers do

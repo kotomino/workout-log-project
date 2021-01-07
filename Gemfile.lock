@@ -49,12 +49,13 @@ GEM
     method_source (1.0.0)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
-    minitest (5.14.2)
+    minitest (5.14.3)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.11.0)
+    nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pg (0.21.0)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -128,6 +129,7 @@ DEPENDENCIES
   capybara
   database_cleaner!
   dotenv
+  pg (~> 0.15)
   pry
   rack-test
   rake

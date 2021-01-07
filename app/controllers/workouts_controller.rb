@@ -64,12 +64,10 @@ class WorkoutsController < ApplicationController
     end
 
     def redirect_if_workout_not_found
-        flash[:errors] = ["Workout not found."]
         redirect "/workouts" unless @workout
     end
 
     def redirect_if_not_owner
-        flash[:errors] = ["Workout not found."]
         redirect "/workouts" unless @workout.user == current_user
     end
     
