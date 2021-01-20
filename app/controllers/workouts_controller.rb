@@ -3,7 +3,6 @@ class WorkoutsController < ApplicationController
         redirect_if_not_logged_in
         @workouts = current_user.workouts
         @workout = Workout.find_by_id(session[:workout_id])
-        @user = User.find_by_id(session[:user_id])
         
         erb :'/workouts/index'
     end
