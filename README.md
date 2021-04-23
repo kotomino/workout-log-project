@@ -1,6 +1,6 @@
 # PR Jounral Sinatra App
 
-Vacay Away is a React JS web app that allows users to plan each of their vacation days with activities that display their hours of operation, addresses, and estimated costs. The app allows for flexible, dynamic, and visual engagement and automatically calculates the remaining budget from the original amount the user indicates. 
+PR Journal is a Sinatra web app that allows users to track their workout goals and personal records in one place. The app helps users visualize their fitness milestones, making their progress more tangible. Logging your achievements is the key to mindful and deliberate success.
 
 Find the app hosted on Heroku here: https://pr-journal.herokuapp.com/
 
