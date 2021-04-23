@@ -1,50 +1,32 @@
-# Workout PR Journal
----
+# PR Jounral Sinatra App
 
-## Models
+Vacay Away is a React JS web app that allows users to plan each of their vacation days with activities that display their hours of operation, addresses, and estimated costs. The app allows for flexible, dynamic, and visual engagement and automatically calculates the remaining budget from the original amount the user indicates. 
 
-### Workout
-- name
-- personal_record
-- date
-
-belong to a user
-
-### User
-- username / email
-- password_digest (encrypted- bcrypt)
-
-has many workouts
-
-### Sessions (cookies)
+Find the app hosted on Heroku here: https://pr-journal.herokuapp.com/
 
 
-## Controllers
+### Preview
 
-### 7 Different Restful routes for Workouts
-GET ROUTES
+![Screen Shot 2021-04-23 at 11 28 05 AM](https://user-images.githubusercontent.com/73256077/115894263-105ad480-a427-11eb-9243-c5ee6a149af0.png)
+
+## Installation
+
+ 1. Clone the project's GitHub Repository in your desired directory.
+ ```
+ $ git clone git@github.com:kotomino/flappy-bernie-backend.git
+ ```
+2. Run bundle install inside the project directory.
+``` 
+$ bundle install
 ```
-- index route: /workouts (list of workouts)
-- show route: /workouts/:id (shows info about specific workout)
-- new route: /workouts/new (displays form to log new workout)
-- edit route: /workouts/:id/edit (displays form to update a workout)
+3. Run db:create and db:migrate with rails.
 ```
-POST ROUTE
-```
-- create route: /workouts (creates a new workout)
-```
-PATCH ROUTE
-```
-- update route: /workouts/:id (updates a previous workout)
-```
-DELETE ROUTE
-```
-- destroy route: /workouts/:id (deleted a previous workout)
+$ rails db:create
+$ rails db:migrate
 ```
 
-## Sinatra Flow
-
-
-
-
-
+## Usage
+1. Run rails s in terminal inside the backend project folder.
+```
+$ rails s
+```
