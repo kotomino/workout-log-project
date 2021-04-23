@@ -11,22 +11,26 @@ Find the app hosted on Heroku here: https://pr-journal.herokuapp.com/
 
 ## Installation
 
- 1. Clone the project's GitHub Repository in your desired directory.
+ 1. Clone the project's GitHub Repository into your desired directory.
  ```
- $ git clone git@github.com:kotomino/flappy-bernie-backend.git
+ $ git clone git@github.com:kotomino/workout-log-project.git
  ```
 2. Run bundle install inside the project directory.
 ``` 
 $ bundle install
 ```
-3. Run db:create and db:migrate with rails.
+3. Create and migrate the databse using rake.
 ```
-$ rails db:create
-$ rails db:migrate
+$ rake db:create
+$ rake db:migrate
 ```
 
 ## Usage
-1. Run rails s in terminal inside the backend project folder.
+1. Run shotgun in terminal inside the project folder.
 ```
-$ rails s
+$ shotgun
 ```
+2. Navigate to your browser and enter shotgun's localhost server (default: localhost:9393).
+
+3. Signup and create a user account.
+
